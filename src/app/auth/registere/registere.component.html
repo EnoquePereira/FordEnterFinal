@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="container">
+    <h2>Cadastrar</h2>
+    <form (ngSubmit)="cadastrar()">
+      <input type="text" placeholder="Nome Completo" required [(ngModel)]="nome" name="nome">
+      <input type="email" placeholder="E-mail" required [(ngModel)]="email" name="email">
+      <input type="password" placeholder="Senha" required [(ngModel)]="senha" name="senha">
+
+      <div class="checkbox">
+        <input type="checkbox" id="termos" required [(ngModel)]="termos" name="termos">
+        <label for="termos">
+          Li e aceito os <strong>Termos de Uso</strong> e a <strong>Política de Privacidade</strong>.
+        </label>
+      </div>
+
+      <div class="termos">
+        Ao cadastrar-se, você concorda com o tratamento de seus dados pessoais conforme a Lei nº 13.709/2018 (LGPD). 
+      </div>
+
+      <button type="submit" class="btn">Cadastrar</button>
+    </form>
+
+    <p class="link">
+      Já tem conta?
+      <a routerLink="/login">Entrar</a>
+    </p>
+  </div>
+</div>
+

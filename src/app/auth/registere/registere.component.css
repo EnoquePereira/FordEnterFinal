@@ -1,0 +1,107 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* altura total da janela de visualização */
+  width: 100%;
+  background-color: #dbe7ff; /* opcional - fundo claro como na imagem */
+}
+
+.container {
+  background: #fff;
+  width: 380px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #1e3c72;
+}
+
+.btn {
+  background: #1e3c72;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #2a5298;
+}
+
+.link {
+  text-align: center;
+  font-size: 14px;
+  color: #1e3c72;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.link a {
+  color: #2a5298;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.checkbox input {
+  margin-top: 3px;
+}
+
+.termos {
+  font-size: 13px;
+  text-align: justify;
+  color: #555;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 5px;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.alerta {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}

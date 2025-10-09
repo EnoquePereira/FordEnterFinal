@@ -1,0 +1,55 @@
+@if (isOpen) {
+  <div class="modal-overlay" (click)="onClose()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>Registrar Nova Entrega</h2>
+        <p>Preencha os dados da entrega com atenção</p>
+        <button class="close-btn" (click)="onClose()" aria-label="Fechar">&times;</button>
+      </div>
+
+      <form [formGroup]="entregaForm" (ngSubmit)="onSubmit()">
+        <div class="form-section">
+          <h3>Informações do Destinatário</h3>
+          <div class="form-group">
+            <label for="aptoInput">Número do Apartamento *</label>
+            <input id="aptoInput" formControlName="apto" type="text" placeholder="Ex: 101, 205A, 1504">
+          </div>
+          <div class="form-group">
+            <label for="moradorInput">Nome do Morador *</label>
+            <input id="moradorInput" formControlName="morador" type="text" placeholder="Nome completo do morador">
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Detalhes da Entrega</h3>
+          <div class="delivery-type">
+            <button type="button" class="tipo" [class.ativo]="entregaForm.get('tipo')?.value === 'Encomenda'" (click)="selecionarTipo('Encomenda')">Encomenda</button>
+            <button type="button" class="tipo" [class.ativo]="entregaForm.get('tipo')?.value === 'Correspondência'" (click)="selecionarTipo('Correspondência')">Correspondência</button>
+            <button type="button" class="tipo" [class.ativo]="entregaForm.get('tipo')?.value === 'Medicamento'" (click)="selecionarTipo('Medicamento')">Medicamento</button>
+            <button type="button" class="tipo" [class.ativo]="entregaForm.get('tipo')?.value === 'Alimentação'" (click)="selecionarTipo('Alimentação')">Alimentação</button>
+            <button type="button" class="tipo" [class.ativo]="entregaForm.get('tipo')?.value === 'Documento'" (click)="selecionarTipo('Documento')">Documento</button>
+          </div>
+
+          <div class="form-group">
+            <label for="remetenteInput">Remetente/Empresa *</label>
+            <input id="remetenteInput" formControlName="remetente" type="text" placeholder="Ex: Amazon, Correios, iFood">
+          </div>
+          <div class="form-group">
+            <label for="descricaoInput">Descrição da Entrega *</label>
+            <input id="descricaoInput" formControlName="desc" type="text" placeholder="Ex: Caixa pequena, Envelope, Sacola">
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Observações Adicionais</h3>
+          <textarea formControlName="obs" placeholder="Informações importantes sobre a entrega (frágil, urgente, refrigerado, etc.)"></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="cancelar" (click)="onClose()">Cancelar</button>
+          <button type="submit" class="confirmar">Registrar Entrega</button>
+        </div>
+      </form>
+    </div>
+  </div>
+}

@@ -1,0 +1,16 @@
+<div class="main">
+  <div class="container">
+    <h2>Login</h2>
+    <form id="formLogin" (ngSubmit)="onSubmit()">
+      <input type="email" id="loginEmail" placeholder="E-mail" required [(ngModel)]="loginEmail" name="loginEmail">
+      <input type="password" id="loginSenha" placeholder="Senha" required [(ngModel)]="loginSenha" name="loginSenha">
+      <button type="submit" class="btn">Entrar</button>
+      <div class="alerta" *ngIf="loginErro">{{ loginErro }}</div>
+    </form>
+    <p class="link">
+      Não tem conta?
+    <a routerLink="/registro">Cadastro</a>
+    </p>
+  </div>
+</div>
+
